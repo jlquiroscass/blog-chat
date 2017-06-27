@@ -1,12 +1,9 @@
 package jlquiros.blog.controller;
 
-import java.security.NoSuchAlgorithmException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.web.savedrequest.DefaultSavedRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -16,7 +13,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import jlquiros.blog.form.RegisterForm;
-import jlquiros.blog.repository.UserRepository;
 import jlquiros.blog.service.UserService;
 import jlquiros.blog.serviceImpl.CommonServiceImpl;
 

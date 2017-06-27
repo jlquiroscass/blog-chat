@@ -3,7 +3,6 @@ package jlquiros.blog.service;
 import org.springframework.stereotype.Service;
 
 import jlquiros.blog.form.RegisterForm;
-import jlquiros.blog.model.User;
 
 @Service
 public interface UserService {

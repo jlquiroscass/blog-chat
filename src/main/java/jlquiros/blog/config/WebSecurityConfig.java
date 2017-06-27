@@ -35,7 +35,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		CustomAccessDeniedHandler accessDeniedHandler = new CustomAccessDeniedHandler();
-		// TODO security riks. We need to allow frames only from our landing domain. Not sure how to do it on Spring Security 3.2
 		http
 		.headers().frameOptions().disable();
 		http

@@ -1,6 +1,5 @@
 package jlquiros.blog.controller;
 
-import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.security.core.Authentication;
@@ -12,11 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import jlquiros.blog.config.CustomUserDetails;
 import jlquiros.blog.model.Message;
 import jlquiros.blog.model.OutputMessage;
-import jlquiros.blog.model.Post;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
 
 @Controller
 public class ChatController {

@@ -31,6 +31,8 @@ public class BlogMvcConfiguration extends WebMvcAutoConfigurationAdapter {
 	 
 	    return new EmbeddedServletContainerCustomizer() {
 	        public void customize(ConfigurableEmbeddedServletContainer container) {
+	        	
+	        	//TODO: Create pages
 	        	ErrorPage error400Page = new ErrorPage(HttpStatus.BAD_REQUEST, "/400.html");
 	            ErrorPage error401Page = new ErrorPage(HttpStatus.UNAUTHORIZED, "/401.html");
 	            ErrorPage error403Page = new ErrorPage(HttpStatus.FORBIDDEN, "/403");

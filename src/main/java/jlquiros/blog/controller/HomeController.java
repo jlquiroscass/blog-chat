@@ -1,19 +1,16 @@
 package jlquiros.blog.controller;
 
-import java.util.HashSet;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import jlquiros.blog.config.CustomUserDetails;
 import jlquiros.blog.form.PostForm;
 import jlquiros.blog.model.Post;
-import jlquiros.blog.model.Tag;
 import jlquiros.blog.repository.PostRepository;
 import jlquiros.blog.repository.TagRepository;
 import jlquiros.blog.service.PostService;
@@ -71,8 +67,6 @@ public class HomeController {
 	
 	@RequestMapping(value = "/post", method = RequestMethod.GET)
     public String post(Model model) {
-		
-		List<Post> latest5Posts = postrepository.findAll();
 	
 		return "post";
 	}

@@ -15,12 +15,6 @@ public interface TagRepository extends JpaRepository<Tag, TagPK>{
 	public List<Tag> findAll();
 	
 	Post findByIdIdPost(Long id_post);
-	
-	/*Post post (Post toPost);
-	
-	Post edit(Post post);
-	
-    void deleteById(Long id);*/
 
 
 }
