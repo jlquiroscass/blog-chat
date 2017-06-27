@@ -1,0 +1,83 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+<title>New Post</title>
+</head>
+
+	
+<body>
+
+
+
+	<!--/* Main Panel */-->
+	<div style="     position: absolute;     top: 50%;     left: 50%;     transform: translate(-50%, -50%);     width: 500px; ">
+		<div >
+
+<img class="logo-horizontal" th:src="@{/img/site-logo.jpg}" style="    width: 40%;  margin-left: auto;  margin-right: auto;  display: block;" />
+			<form th:action="@{/register}" th:object="${registerForm}" method="post" action="">
+
+				<h1 style="text-align:center;"
+					th:text="#{login.welcome}">Bienvenido a JLQuiros Blog</h1>
+
+				<div class="cajaInput">
+					<input th:id="inputName" class="inputText" type="text"
+						name="email" id="email"
+						th:placeholder="#{login.field.email}" placeholder="Email" />
+						<abbr th:if="${#fields.hasErrors('email')}" th:title="#{common.error.emptyfield}" title="Field cannot be empty"><span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span></abbr>
+
+				</div>
+				<div class="cajaInput">
+					<input th:id="inputPassword" class="inputText" type="password"
+						name="password" id="password"
+						th:placeholder="#{login.field.password}" placeholder="Password" />
+				</div>
+
+				<div class="cajaBotonAcceso">
+					<input th:id="botonAcceso" th:if="${error==null}"
+						class="boton"
+						type="submit"  th:value="#{register.welcome}"
+						value="REGISTER"/> 
+					<input  th:id="botonAcceso" th:if="${alreadyRegister!=null}" type="submit" class="boton" th:value="#{register.error.user_exists}" value="LOGIN" />
+					<input  th:id="botonAcceso" th:if="${alreadyRegister==null and error!=null}" type="submit" class="boton" th:value="#{register.error.error}" value="LOGIN" />
+				</div>
+
+				<div class="footer" style="clear: both;">
+					<a class="linkFooter" style="    font-family: 'Exo 2', sans-serif;       text-decoration: none; text-align:center;	"
+						th:text="#{login.message.login.text}"
+						th:href="@{/login}" href="login.html">Login!</a>
+				</div>
+			</form>
+
+
+		</div>
+
+
+
+	</div>
+
+
+
+<script>
+$(document).ready(function() {
+		var user = /*[[${param.user}]]*/
+			if(user!=null){
+				$('#inputName').attr('value', user);
+			}
+		});
+		var $input1 = $('#inputName');
+		var $input2 = $('#inputPassword');
+		
+		$input1.on('keydown', function(){
+	    	$('#botonAcceso').attr('class', 'boton');
+			$('#botonAcceso').attr('value', 'LOGIN');
+
+		});
+
+		$input2.on('keydown', function(){
+			$('#botonAcceso').attr('class', 'boton');
+			$('#botonAcceso').attr('value', 'LOGIN');
+		});
+</script>
+
+</body>
+</html>

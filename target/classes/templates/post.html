@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+<title>New Post</title>
+</head>
+
+<body>
+
+	<header th:replace="layout :: site-header" />
+<div style="
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+">
+
+	<h1>New Post</h1>
+
+	<form method="post" action="#" th:action="@{/toPost}"
+		th:object="${postForm}">
+		<div>
+		<input class="inputText" placeholder="Post Title"  id="title" type="text" name="title" />
+		</div>
+		<input id="tags" type="hidden" name="tags" value=""/>
+
+		<div>
+		<textarea placeholder="Post text" rows="20" name="text" id="text" cols="40" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+</div>
+
+		<div>
+			<input  class="boton" type="submit" value="submit"  onclick="sendPost();" />
+		</div>
+
+	</form>
+	
+	<div>
+		<input  class="inputText"  placeholder="Tags (Press intro to add Tag)" type="text" id="txtTags" /> 
+		<input class="boton" type="button" id="btnTag"
+			value="Add Tag" onclick="addTag();" />
+	</div>
+
+	<ul id="listTags" style="background: #FFFFFF;">
+		
+	</ul>
+	</div>
+
+
+	<script type="text/javascript">
+		function addTag() {
+			var text = $("#txtTags")[0].value;
+			var ul = document.getElementById("listTags");
+			var li = document.createElement("li");
+			li.className = "liTag";
+			li.appendChild(document.createTextNode(text));
+			ul.appendChild(li);
+			$("#txtTags")[0].value = '';
+		}
+
+		$("#txtTags").keyup(function(event) {
+			if (event.keyCode == 13) {
+				$("#btnTag").click();
+			}
+		});
+		
+		function sendPost(){
+			//$('#programEditionIdPhase')[0].value=editionId;
+			/*var ul = document.getElementById("listTags");
+			var index = ul.index();
+		    var text = ul.text();
+		    var value = ul.attr('data-value');
+		    alert('Index is: ' + index + ' , text is ' + text + ' and value is ' + value);*/
+		    var listItems = $("li.liTag");
+		    var strtags="";
+		    listItems.each(function(idx, li) {
+		    	strtags=strtags + $( this ).text() + "|";
+				});
+		    $('#tags')[0].value=strtags;
+			
+		}
+	</script>
+
+</body>
+
+</html>

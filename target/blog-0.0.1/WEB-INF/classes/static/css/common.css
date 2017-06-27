@@ -1,0 +1,150 @@
+body {background: #F0F0F0;}
+
+
+h2 {margin-left: 55px;}
+
+textarea {
+  margin-top: 10px;
+
+      position: relative;
+    border: 0;
+    border-radius: 10px;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.07);
+    border-color: -moz-use-text-color #FFFFFF #FFFFFF -moz-use-text-color;
+    width: 100%;
+    height: 100px;
+    color: #FFFFFF;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 200;
+    transition: background-color 0.2s ease 0s;
+}
+
+.inputText {margin-top: 10px;
+    position: relative;
+    border: 0;
+    border-radius: 10px;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.07);
+    border-color: -moz-use-text-color #FFFFFF #FFFFFF -moz-use-text-color;
+    width: 100%;
+    height: 45px;
+    color: #FFFFFF;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 200;
+    transition: background-color 0.2s ease 0s;
+}
+
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+body>header {
+background: #eee;
+padding: 5px;
+}
+body>header>a>img, body>header a {
+display: inline-block;
+vertical-align: middle;
+padding: 0px 5px;
+font-size: 1.2em;
+}
+body>footer {
+background: #eee;
+padding: 5px;
+margin: 10px 0;
+text-align: center;
+}
+#logged-in-info {
+float: right;
+margin-top: 18px;
+}
+#logged-in-info form {
+display: inline-block;
+margin-right: 10px;
+}
+
+.liTag {
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+.liTag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.liTag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.liTag:hover {
+  background-color: crimson;
+  color: white;
+}
+
+.liTag:hover::after {
+   border-left-color: crimson; 
+}
+
+.boton {
+	outline: 0;
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 16px;
+    height: 45px;
+    border: 0px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    overflow: hidden;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+}
+
+h1 {
+	    font-family: 'Exo 2', sans-serif;
+    font-size: 22px;
+    margin: 15px 0 10px 0;
+    text-align: center;
+}
+
+.date{
+	text-align: right;
+}
